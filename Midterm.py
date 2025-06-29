@@ -2,11 +2,20 @@ import numpy as np
 import pandas as pd
 from sklearn import preprocessing
 from sklearn.preprocessing import Normalizer
+import kagglehub
+
+# Download latest version
+path = kagglehub.dataset_download(
+    "rakeshkapilavai/extrovert-vs-introvert-behavior-data",
+    path="personality_datasert.csv",
+)
+
+print("Path to dataset files:", path)
 
 pd.set_option("display.max_columns", None)
 
 # Reads the csv file of data that trains our model:
-df = pd.read_csv("C:\\Users\\skkae\\Downloads\\personality_datasert.csv")
+df = pd.read_csv(path)
 
 # delete any rows with empty data before any preprocessing
 df.dropna(inplace=True)
