@@ -1,26 +1,9 @@
-from json import encoder
-
-from pandas.core.common import random_state
-from sklearn.base import re
-import data_preprocessing as data
-import pandas as pd
-import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
-data_frames = data.data_preprocessing()
-encoded_data = data_frames[0]
-norma_data = data_frames[1]
 
-
-def norma_encode():
-    encoder_list = data_frames[3]
-    norma = data_frames[2]
-    return [encoder_list, norma]
-
-
-def linear_model():
+def linear_model(norma_data):
     # Start of linear_model
     #
     # Time_spent_Alone,Stage_fear,Social_event_attendance,Going_outside,Drained_after_socializing,Friends_circle_size,Post_frequency,Personality
@@ -51,7 +34,7 @@ def linear_model():
     # lr_predict = lr_model.predict(feature_data_test)
 
 
-def decision_tree():
+def decision_tree(encoded_data):
     feature_data = encoded_data[
         [
             "Time_spent_Alone",
