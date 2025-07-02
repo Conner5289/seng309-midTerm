@@ -1,6 +1,21 @@
 import models
 import pandas as pd
+from sklearn.metrics import mean_absolute_error
 
+# # [encoded_dataframe, final_norma_dataframe, data_scaler, encoder_list]
+# data_list = data.data_preprocessing()
+# # gets the processed data, would be nice to make them each in function calls
+# encoded_dataframe = data_list[0]
+# norma_dataframe = data_list[1]
+#
+# # getting the scaler out
+# norma_scaler = data_list[2]
+#
+# encode_label_list = data_list[3]
+# # getting each label out of the list, need to find a better way
+# stage_fear_encoder = encode_label_list[0]
+# draiand_event_encoder = encode_label_list[1]
+# personality_encoder = encode_label_list[2]
 
 print(
     "Welcome to are extrovert or introvert predictor, we have some question for you the we will prodict what you are"

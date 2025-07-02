@@ -8,6 +8,7 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import mean_absolute_error
 
 data_frames = data.data_preprocessing()
 encoded_data = data_frames[0]
@@ -45,6 +46,8 @@ def linear_model():
 
     lr_model = LinearRegression()
     lr_model.fit(feature_data_train, target_train)
+    mae_test = mean_absolute_error(target_test, lr_model.predict(feature_data_test))
+    print("The error rate for this model is ", mae_test)
 
     return lr_model
 
@@ -71,5 +74,10 @@ def decision_tree():
 
     dt_model = DecisionTreeClassifier(random_state=52)
     dt_model.fit(feature_data_train, target_train)
+    mae_test = mean_absolute_error(target_test, dt_model.predict(feature_data_test))
+    print("The error rate for this model is", mae_test)
+
+    mae_test = mean_absolute_error(target_test, lr_model.predict(feature_data_test))
+    print("The error rate for this model is ", mae_test)
 
     return dt_model
