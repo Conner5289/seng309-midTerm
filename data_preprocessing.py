@@ -8,6 +8,7 @@ import argparse
 def data_preprocessing():
     raw_data = pd.read_csv("personality_datasert.csv")
 
+    # drops rows with any blank data
     raw_data.dropna(inplace=True)
 
     label_encoder_stage_fear = preprocessing.LabelEncoder()
