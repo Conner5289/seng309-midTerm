@@ -77,7 +77,4 @@ def decision_tree():
     mae_test = mean_absolute_error(target_test, dt_model.predict(feature_data_test))
     print("The error rate for this model is", mae_test)
 
-    mae_test = mean_absolute_error(target_test, lr_model.predict(feature_data_test))
-    print("The error rate for this model is ", mae_test)
-
     return dt_model
